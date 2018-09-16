@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>RESISTORM studios</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="page_header">
+        <a href="javascript:void(0)" onclick="openDrawer()">
+            <img id="leftnavicon" src="img/menu_icon_left.png" width="30px" height="30px" />
+        </a>
+
+        <div id="leftnav">
+
+            <a id="closebutton" href="javascript:void(0)" onclick="closeDrawer()">&times;</a>
+
+            <ul id="leftnavlist">
+                <li><a href="javascript:void(0)" onclick="loadContentForWebDevelopment()"> Website Development </a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForWebsiteOwners()">Website Services</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForExcelSpecialties()">Excel Specialiteiten</a></li>
+            </ul>
+
+        </div>
+        <!--end of leftnav-->
+        <div id="head_logo" style="position:absolute; top: 0; right: 5px; display: flex; flex-direction: row; align-items: center;height: 50px;">
+            <h1 style="font-size: 22px; font-weight:700; border: 2px black solid; color: black; padding: 1px 5px;">RESISTORM</h1>
+            <h1 style="font-size: 22px; font-weight:500; border: none; color: black;">Studios</h1>
+        </div>
+    </div>
+    <!--end of page_header-->
+
+
+
+
+
+    <script>
+        window.onresize = restoreDrawer();
+        //Closes the navigation drawer on resize events to set the width before media querie
+        function restoreDrawer() {
+            if (window.innerWidth <= 991) {
+                closeDrawer();
+            }
+        }
+        //Opens the side drawer by setting it's width to 300
+        function openDrawer() {
+            console.log("opendrawer");
+            document.getElementById("leftnav").style.width = "300px";
+        }
+        //closes the side drawer by setting it's width to 0
+        function closeDrawer() {
+            console.log("closedrawer");
+            document.getElementById("leftnav").style.width = "0";
+        }
+        //TODO:
+        //load content for the Web Development page using XMLHttpRequest
+        function loadContentForWebDevelopment() {
+            console.log("Load content for web development not implemented yet");
+            closeDrawer();
+        }
+        //TODO:
+        //load content for the Website Owners page using XMLHttpRequest
+        function loadContentForWebsiteOwners() {
+            console.log("Load content for web development not implemented yet");
+            closeDrawer();
+        }
+        //TODO:
+        //load content for the Excel Specialties page using XMLHttpRequest
+        function loadContentForExcelSpecialties() {
+            console.log("Load content for web development not implemented yet");
+            closeDrawer();
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
