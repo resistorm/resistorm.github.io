@@ -135,6 +135,8 @@ a:visited {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
+        
     }
     .rowcontainer div, .rowcontainer h1{
         position: static;
