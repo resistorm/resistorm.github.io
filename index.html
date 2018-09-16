@@ -142,7 +142,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     removeActiveTags();
                     displayExcelSpecialties(this);
-                    document.getElementById("excel_navlink").classList.add("active_navlink");
+                    document.getElementById("excel_link").classList.add("active_navlink");
                 }
             };
             xhttp.open('GET', 'pages/excel.xml', true);
