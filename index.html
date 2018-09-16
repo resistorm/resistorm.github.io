@@ -20,9 +20,12 @@
             <a id="closebutton" href="javascript:void(0)" onclick="closeDrawer()">&times;</a>
 
             <ul id="leftnavlist">
-                <li><a href="javascript:void(0)" onclick="loadContentForWebDevelopment()"> Website Development </a></li>
-                <li><a href="javascript:void(0)" onclick="loadContentForWebsiteOwners()">Website Services</a></li>
-                <li><a href="javascript:void(0)" onclick="loadContentForExcelSpecialties()">Excel Specialiteiten</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForWebDevelopment()" id="webdev_link" class="active_navlink">
+                        Website Development </a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForWebsiteServices()" id="webown_link">Website
+                        Services</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForExcelSpecialties()" id="excel_link">Excel
+                        Specialiteiten</a></li>
             </ul>
 
         </div>
@@ -35,6 +38,15 @@
     <!--end of page_header-->
 
     <div id="content_page">
+        <div id="content_head" class="rowcontainer">
+            <div id=content_head_img>
+                <img src="img/webdev.png">>
+            </div>
+            <h1>Passie voor- <br /> en Kennis van<br /> Computer Technologie</h1>
+        </div>
+
+        <hr />
+
         <div id="content_list">
             <div class="content_list_item" id="list_item_1">
                 <div class="left_item"></div>
@@ -48,6 +60,10 @@
 
 
 
+
+    <!---->
+    <!---->
+    <!---->
     <script>
         window.onresize = restoreDrawer();
         //Closes the navigation drawer on resize events to set the width before media querie
@@ -56,16 +72,31 @@
                 closeDrawer();
             }
         }
+
+
         //Opens the side drawer by setting it's width to 300
         function openDrawer() {
             console.log("opendrawer");
             document.getElementById("leftnav").style.width = "400px";
         }
+
+
         //closes the side drawer by setting it's width to 0
         function closeDrawer() {
             console.log("closedrawer");
             document.getElementById("leftnav").style.width = "0";
         }
+
+
+
+
+
+
+
+
+
+
+
         //TODO:
         //load content for the Web Development page using XMLHttpRequest
         function loadContentForWebDevelopment() {
@@ -73,33 +104,98 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
+                    removeActiveTags();
                     displayWebDevelopment(this);
+                    document.getElementById("webdev_link").classList.add("active_navlink");
                 }
             };
             xhttp.open('GET', 'pages/webdev.xml', true);
             xhttp.send();
             closeDrawer();
         }
+
+
         //TODO:
         //load content for the Website Owners page using XMLHttpRequest
-        function loadContentForWebsiteOwners() {
-            console.log("Load content for web development not implemented yet");
+        function loadContentForWebsiteServices() {
+            console.log("Load content for web services not implemented yet");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    removeActiveTags();
+                    displayWebServices(this);
+                    document.getElementById("webown_link").classList.add("active_navlink");
+                }
+            };
+            xhttp.open('GET', 'pages/webown.xml', true);
+            xhttp.send();
             closeDrawer();
         }
+
+
         //TODO:
         //load content for the Excel Specialties page using XMLHttpRequest
         function loadContentForExcelSpecialties() {
-            console.log("Load content for web development not implemented yet");
+            console.log("Load content for Excel Specialties not implemented yet");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    removeActiveTags();
+                    displayExcelSpecialties(this);
+                    document.getElementById("excel_navlink").classList.add("active_navlink");
+                }
+            };
+            xhttp.open('GET', 'pages/excel.xml', true);
+            xhttp.send();
             closeDrawer();
         }
 
 
+
+
+
+        //TODO: implement
+        //Lays out all xml data that is recieved with loadContentForWebDevelopment()
         function displayWebDevelopment(xml) {
             var xmlDoc = xml.responseXML;
             var element = document.getElementById("list_item_1");
             var content = "<p>";
             content += xmlDoc.getElementsByTagName("rowitem")[0].childNodes[0].nodeValue + "</p>";
             element.getElementsByTagName("div")[0].innerHTML = content;
+        }
+
+
+
+        //TOTO: implement
+        function displayWebServices(xml) {
+            var xmlDoc = xml.responseXML;
+            //
+            //
+            //
+        }
+
+
+
+        //TODO: implement
+        function displayExcelSpecialties(xml) {
+            var xmlDoc = xml.responseXML;
+            //
+            //
+            //
+        }
+
+
+
+
+
+
+        //Removes the actuve_navlink from the namespace of the current active navigation link to enable a new link to become active
+        function removeActiveTags() {
+            var elements = document.getElementByClassName("active_navlink");
+            if (elements != null && elements.length > 0) {
+                elements[0].classList.remove("active_navlink");
+            }
+
         }
 
 
