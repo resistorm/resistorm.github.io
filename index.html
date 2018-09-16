@@ -191,7 +191,7 @@
 
         //Removes the actuve_navlink from the namespace of the current active navigation link to enable a new link to become active
         function removeActiveTags() {
-            var elements = document.getElementByClassName("active_navlink");
+            var elements = document.getElementsByClassName("active_navlink");
             if (elements != null && elements.length > 0) {
                 elements[0].classList.remove("active_navlink");
             }
