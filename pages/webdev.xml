@@ -1,0 +1,13 @@
+<websitedevelopment>
+    <pagecontent>
+        <pagerow>
+            <rowitem side="left" type="txt">
+                Test Text
+            </rowitem>
+            <rowitem side="right" type="img">
+                <!-- IMAGE URL -->
+            </rowitem>
+        </pagerow>
+    </pagecontent>
+</websitedevelopment>
+	

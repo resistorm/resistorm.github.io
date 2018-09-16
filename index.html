@@ -34,6 +34,16 @@
     </div>
     <!--end of page_header-->
 
+    <div id="content_page">
+        <div id="content_list">
+            <div class="content_list_item" id="list_item_1">
+                <div class="left_item"></div>
+                <div class="right_item"></div>
+            </div>
+        </div>
+
+    </div>
+
 
 
 
@@ -49,7 +59,7 @@
         //Opens the side drawer by setting it's width to 300
         function openDrawer() {
             console.log("opendrawer");
-            document.getElementById("leftnav").style.width = "300px";
+            document.getElementById("leftnav").style.width = "400px";
         }
         //closes the side drawer by setting it's width to 0
         function closeDrawer() {
@@ -60,6 +70,14 @@
         //load content for the Web Development page using XMLHttpRequest
         function loadContentForWebDevelopment() {
             console.log("Load content for web development not implemented yet");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayWebDevelopment(this);
+                }
+            };
+            xhttp.open('GET', 'pages/webdev.xml', true);
+            xhttp.send();
             closeDrawer();
         }
         //TODO:
@@ -75,6 +93,14 @@
             closeDrawer();
         }
 
+
+        function displayWebDevelopment(xml) {
+            var xmlDoc = xml.responseXML;
+            var element = document.getElementById("list_item_1");
+            var content = "<p>";
+            content += xmlDoc.getElementsByTagName("rowitem")[0].childNodes[0].nodeValue + "</p>";
+            element.getElementsByTagName("div")[0].innerHTML = content;
+        }
 
 
 
