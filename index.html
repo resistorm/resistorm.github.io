@@ -27,12 +27,17 @@
             <!--Handlers will be implemented to request the page content asynchronous making use of the XMLHttpRequest callback-->
             <!--IMPORTANT: WHEN RUNNING SITE FROM LOCAL FILES, XML REQUESTS CANNOT RETURN THE XML FILE. WHEN INVOKED FROM HTTP, NO EXCEPTIONS ARE THROWN-->
             <ul id="leftnavlist">
-                <li><a href="javascript:void(0)" onclick="loadContentForWebsitest()" id="websites_link" class="active_navlink">
+
+                <li><a href="index.html" id="home_link" class="active_navlink">
+                        HOME</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForWebsitest()" id="websites_link">
                         Websites</a></li>
                 <li><a href="javascript:void(0)" onclick="loadContentForDigitalisatie()" id="digitalisatie_link">
                         Digitalisatie</a></li>
                 <li><a href="javascript:void(0)" onclick="loadContentForData()" id="data_link">
                         Data</a></li>
+                <li><a href="contact.html" id="contact_link">
+                        Contact</a></li>
             </ul>
             <!--the onclick handlers are implemented to remove the 'active_navlink' from the previous link, and add it to the new link after the content is layed out-->
         </div>
@@ -207,6 +212,8 @@
             xhttp.send();
             closeDrawer();
         }
+
+
 
 
 
