@@ -251,6 +251,8 @@ a:visited {
     #leftnavicon {
         display: block;
         float: left;
+        margin-top: 15px;
+        margin-left: 15px;
     }
     #leftnav {
         color: white;
@@ -324,6 +326,8 @@ a:visited {
     #leftnavicon {
         display: block;
         float: left;
+        margin-top: 15px;
+        margin-left: 15px;
     }
     #leftnav {
         color: white;
@@ -455,6 +459,8 @@ a:visited {
     #leftnavicon {
         display: block;
         float: left;
+        margin-top: 15px;
+        margin-left: 15px;
     }
     #leftnav {
         color: white;
