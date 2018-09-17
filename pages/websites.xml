@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<websitedevelopment>
+    <pagecontent>
+        <pagerow>
+            <rowitem side="left" type="txt">
+                
+            </rowitem>
+            <rowitem side="right" type="img">
+                <!-- IMAGE URL -->
+            </rowitem>
+        </pagerow>
+    </pagecontent>
+</websitedevelopment>

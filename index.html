@@ -10,27 +10,34 @@
 </head>
 
 <body>
+    <!--page header position is fixed and z-index 2 to enable side drawer to open on top of the header-->
     <div id="page_header">
+        <!--Menu button wrapped in link element is only visible at width < 992px to clear the header bar-->
+        <!--The onclick is handled by the js code at the bottom-->
+        <!--openDrawer is implemented by accessing the style property of the leftnav div, and incrementing its width from 0 to 400px-->
+        <!--When device-width > 992px, the functionality of both the menubutton as the handler are disabled by hiding the menu button-->
         <a href="javascript:void(0)" onclick="openDrawer()">
             <img id="leftnavicon" src="img/menu_icon_left.png" width="30px" height="30px" />
         </a>
-
+        <!--leftnav wrappes the page navigation interface to enable nabigation from the header and from the side drawer-->
         <div id="leftnav">
-
+            <!--Media Queries ensure the closebutton is only visible on the side drawer when opened-->
             <a id="closebutton" href="javascript:void(0)" onclick="closeDrawer()">&times;</a>
-
+            <!--List does not contain links to other pages but to JS handlers at the page bottom-->
+            <!--Handlers will be implemented to request the page content asynchronous making use of the XMLHttpRequest callback-->
+            <!--IMPORTANT: WHEN RUNNING SITE FROM LOCAL FILES, XML REQUESTS CANNOT RETURN THE XML FILE. WHEN INVOKED FROM HTTP, NO EXCEPTIONS ARE THROWN-->
             <ul id="leftnavlist">
-                <li><a href="javascript:void(0)" onclick="loadContentForWebDevelopment()" id="webdev_link" class="active_navlink">
-                        Website Development </a></li>
-                <li><a href="javascript:void(0)" onclick="loadContentForWebsiteServices()" id="webown_link">Website
-                        Services</a></li>
-                <li><a href="javascript:void(0)" onclick="loadContentForExcelSpecialties()" id="excel_link">Excel
-                        Specialiteiten</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForWebsitest()" id="websites_link" class="active_navlink">
+                        Websites</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForDigitalisatie()" id="digitalisatie_link">
+                        Digitalisatie</a></li>
+                <li><a href="javascript:void(0)" onclick="loadContentForData()" id="data_link">
+                        Data</a></li>
             </ul>
-
+            <!--the onclick handlers are implemented to remove the 'active_navlink' from the previous link, and add it to the new link after the content is layed out-->
         </div>
         <!--end of leftnav-->
-        <div id="head_logo" style="position:absolute; top: 0; right: 5px; display: flex; flex-direction: row; align-items: center;height: 50px;">
+        <div id="head_logo" style="position:absolute; top: 0; right: 5%; display: flex; flex-direction: row; align-items: center; justify-content: center;height: 70px;">
             <h1 style="font-size: 22px; font-weight:700; border: 2px black solid; color: black; padding: 1px 5px;">RESISTORM</h1>
             <h1 style="font-size: 22px; font-weight:500; border: none; color: black;">Studios</h1>
         </div>
@@ -42,17 +49,68 @@
             <div id=content_head_img>
                 <img src="img/webdev.png">>
             </div>
-            <h1>Passie voor- <br /> en Kennis van<br /> Computer Technologie</h1>
+            <h1>Passie voor Code</h1>
         </div>
+
+        <!--Line divider below content_head-->
+        <hr />
+        <!--Line divider above content_list-->
+
+
+
+
+
+
+
+
+        <div id="content_list">
+
+            <div class="row_item" id="list_item_1">
+                <div class="left_item">
+                    <h1>Websites met Waarde</h1>
+                    <h3>Aandacht voor uw specifieke doelen</h3>
+                    <h4>Responsive, zodat websites compatible zijn met alle apparaten. Interactive, om bezoekers te
+                        kunnen begeleiden. Vindbaar, door implementatie van SEO .</h4>
+
+                </div>
+                <div class="right_item">
+                    <img src="img/website_design.png" />
+                </div>
+            </div>
+        </div>
+
 
         <hr />
 
-        <div id="content_list">
-            <div class="content_list_item" id="list_item_1">
-                <div class="left_item"></div>
-                <div class="right_item"></div>
+
+        <div class="row_item" id="list_item_2">
+            <div class="left_item">
+                <img src="img/digital_business.png" />
+            </div>
+            <div class="right_item">
+                <h1>Digitale Onderneming</h1>
+                <h3>Meer voor elkaar krijgen en minder</h3>
+                <h4>Advies en heldere uitleg over de digitale transformatie en het vergroten van efficiëntie</h4>
+
             </div>
         </div>
+
+
+        <hr />
+
+
+        <div class="row_item" id="list_item_3">
+            <div class="left_item">
+                <h1>Meer uit je Data halen</h1>
+                <h3>Inzichten verkrijgen met data</h3>
+                <h4>Om u uit de voeten te helpen met het genereren, verwerken en begreipen van uw business data </h4>
+            </div>
+            <div class="right_item">
+                <img src="img/data_analysis.png" />
+            </div>
+        </div>
+
+        <hr />
 
     </div>
 
@@ -98,54 +156,54 @@
 
 
         //TODO:
-        //load content for the Web Development page using XMLHttpRequest
-        function loadContentForWebDevelopment() {
-            console.log("Load content for web development not implemented yet");
+        //load content for the Websites page using XMLHttpRequest
+        function loadContentForWebsites() {
+            console.log("Load content for 'WEBSITES' not implemented yet");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     removeActiveTags();
                     displayWebDevelopment(this);
-                    document.getElementById("webdev_link").classList.add("active_navlink");
+                    document.getElementById("websites_link").classList.add("active_navlink");
                 }
             };
-            xhttp.open('GET', 'pages/webdev.xml', true);
+            xhttp.open('GET', 'pages/websites.xml', true);
             xhttp.send(null);
             closeDrawer();
         }
 
 
         //TODO:
-        //load content for the Website Owners page using XMLHttpRequest
-        function loadContentForWebsiteServices() {
-            console.log("Load content for web services not implemented yet");
+        //load content for the Digitalisatie page using XMLHttpRequest
+        function loadContentForDigitalisatie() {
+            console.log("Load content for 'DIGITALISATIE' not implemented yet");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     removeActiveTags();
-                    displayWebServices(this);
-                    document.getElementById("webown_link").classList.add("active_navlink");
+                    displayDigitalisatie(this);
+                    document.getElementById("digitalisatie_link").classList.add("active_navlink");
                 }
             };
-            xhttp.open('GET', 'pages/webown.xml', true);
+            xhttp.open('GET', 'pages/digitalisatie.xml', true);
             xhttp.send();
             closeDrawer();
         }
 
 
         //TODO:
-        //load content for the Excel Specialties page using XMLHttpRequest
-        function loadContentForExcelSpecialties() {
-            console.log("Load content for Excel Specialties not implemented yet");
+        //load content for the Data page using XMLHttpRequest
+        function loadContentForData() {
+            console.log("Load content for 'DATA' not implemented yet");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     removeActiveTags();
-                    displayExcelSpecialties(this);
-                    document.getElementById("excel_link").classList.add("active_navlink");
+                    displayData(this);
+                    document.getElementById("data_link").classList.add("active_navlink");
                 }
             };
-            xhttp.open('GET', 'pages/excel.xml', true);
+            xhttp.open('GET', 'pages/data.xml', true);
             xhttp.send();
             closeDrawer();
         }
@@ -153,10 +211,16 @@
 
 
 
+        //TODO: create a standard format for page layout and xml 
+        //TODO: check necessity for a DTD concerning overall browser compatibility
+        //TODO: reevaluate the displayXxxYyy(xml) methods and reconsider generic display method
+
+
+
 
         //TODO: implement
-        //Lays out all xml data that is recieved with loadContentForWebDevelopment()
-        function displayWebDevelopment(xml) {
+        //Lays out all xml data that is recieved with loadContentForWebsites()
+        function displayWebsites(xml) {
             var xmlDoc = xml.responseXML;
             var element = document.getElementById("list_item_1");
             var content = "<p>";
@@ -167,17 +231,19 @@
 
 
         //TOTO: implement
-        function displayWebServices(xml) {
+        function displayDigitalisatie(xml) {
             var xmlDoc = xml.responseXML;
-            //
-            //
-            //
+            //parse xml tree into standard box structure
+            //Interpret the content type (e.g. text, image, script) and apply appropriate placement strategy
+            //Itterate throught the xml contents until entire page is layed out.
+
+
         }
 
 
 
         //TODO: implement
-        function displayExcelSpecialties(xml) {
+        function displayData(xml) {
             var xmlDoc = xml.responseXML;
             //
             //

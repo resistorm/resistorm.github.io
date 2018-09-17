@@ -5,7 +5,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: 0;
-    padding-top: 50px;
+    padding-top: 70px;
     overflow-x: hidden;
 }
 
@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5, h6, p div {
     margin: 0 auto;
     padding: 0;
     display: block;
+}
+h1, h2, h3, h4{
+    margin-bottom: 0.5em;
 }
 
 img {
@@ -46,10 +49,10 @@ a:visited {
     right: 0;
     background-color: white;
     z-index: 2;
-    height: 50px;
-    box-shadow: 0 3px 5px rgb(63, 63, 63);
+    height: 60px;
+    box-shadow: 0 3px 20px rgb(63, 63, 63);
     overflow: hidden;
-    margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -59,23 +62,23 @@ a:visited {
         font-family: 'Roboto';
     }
     h1 {
-        font-size: 33px;
+        font-size: 40px;
         font-weight: 300;
     }
     h2 {
-        font-size: 23px;
+        font-size: 28px;
         font-weight: 300;
     }
     h3 {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 100;
     }
     h4 {
-        font-size: 10px;
+        font-size: 18px;
         font-weight: 300;
     }
     p {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 300;
     }
     #leftnavicon {
@@ -129,23 +132,23 @@ a:visited {
         font-size: 46px;
         margin-left: 75px;
     }
-    .rowcontainer{
+    .rowcontainer {
         position: static;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
-        
     }
-    .rowcontainer div, .rowcontainer h1{
+    .rowcontainer div, .rowcontainer h1 {
         position: static;
-        clear: right;
         display: block;
-        width: 90%;
+        width: 80%;
+    }
+    #content_page {
+        max-width: 90%;
         margin: 0 auto;
     }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -155,19 +158,19 @@ a:visited {
         font-family: 'Roboto';
     }
     h1 {
-        font-size: 72px;
+        font-size: 50px;
         font-weight: 300;
     }
     h2 {
-        font-size: 45px;
+        font-size: 35px;
         font-weight: 300;
     }
     h3 {
-        font-size: 32px;
+        font-size: 30px;
         font-weight: 300;
     }
     h4 {
-        font-size: 29px;
+        font-size: 25px;
         font-weight: 100;
     }
     p {
@@ -278,12 +281,28 @@ a:visited {
         margin-left: 75px;
     }
     #content_page {
-        max-width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
     }
     .rowcontainer {
         height: 500px;
     }
-
+    .row_item {
+        display: flex;
+        position: static;
+        align-items: center;
+        justify-content: center;
+    }
+    .left_item {
+        display: block;
+        clear: right;
+        width: 80%;
+    }
+    .right_item {
+        display: block;
+        clear: left;
+        width: 80%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -293,19 +312,19 @@ a:visited {
         font-family: 'Roboto';
     }
     h1 {
-        font-size: 82px;
+        font-size: 75px;
         font-weight: 300;
     }
     h2 {
-        font-size: 55px;
+        font-size: 48px;
         font-weight: 300;
     }
     h3 {
-        font-size: 38px;
+        font-size: 33px;
         font-weight: 300;
     }
     h4 {
-        font-size: 38px;
+        font-size: 25px;
         font-weight: 100;
     }
     p {
@@ -366,7 +385,6 @@ a:visited {
     .rowcontainer {
         height: 600px;
     }
-
 }
 
 /**/
@@ -384,19 +402,19 @@ a:visited {
         font-family: 'Roboto';
     }
     h1 {
-        font-size: 82px;
+        font-size: 80px;
         font-weight: 300;
     }
     h2 {
-        font-size: 55px;
+        font-size: 50px;
         font-weight: 300;
     }
     h3 {
-        font-size: 38px;
+        font-size: 35px;
         font-weight: 300;
     }
     h4 {
-        font-size: 38px;
+        font-size: 28px;
         font-weight: 100;
     }
     p {
@@ -406,7 +424,7 @@ a:visited {
     #leftnavicon {
         display: none;
     }
-    .active_navlink{
+    .active_navlink {
         border-bottom: 2px teal solid;
     }
     #leftnav {
@@ -414,7 +432,7 @@ a:visited {
         left: 0;
         position: static;
         height: 100%;
-        width: 700px;
+        width: 600px;
         background-color: white;
         color: black;
         overflow: visible;
@@ -426,7 +444,7 @@ a:visited {
         top: 0;
         height: 100%;
         flex-direction: row;
-        align-items: flex-end;
+        align-items: center;
         flex-wrap: nowrap;
         justify-content: left;
         margin: 0;
@@ -443,7 +461,7 @@ a:visited {
     #leftnavlist a {
         text-align: center;
         display: block;
-        width: 250px;
+        width: 100px;
         color: black;
         list-style: none;
         font-family: 'Roboto';
@@ -451,11 +469,12 @@ a:visited {
         font-weight: 300;
         transform: translateY(0px);
         transition-duration: 0.1s;
+        padding-bottom: 5px;
     }
     #leftnavlist a:hover {
         font-weight: 100;
         text-shadow: 1px 1px 2px rgb(56, 56, 56);
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
     #content_page {
         max-width: 77%;
@@ -499,7 +518,7 @@ a:visited {
         font-weight: 300;
     }
     h4 {
-        font-size: 38px;
+        font-size: 30px;
         font-weight: 100;
     }
     p {
@@ -523,4 +542,32 @@ a:visited {
 
 #content_head h1 {
     width: 50%;
+}
+
+.row_item {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.left_item {
+    display: block;
+    position: static;
+    max-width: 45%;
+    margin-right: 5%;
+}
+
+.right_item {
+    display: block;
+    position: static;
+    max-width: 45%;
+    margin-left: 5%;
+}
+
+hr {
+    margin-top: 10em;
+    margin-bottom: 10em;
 }
