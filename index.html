@@ -281,13 +281,13 @@
             var currScroll = window.pageYOffset;
             var deltaScroll = currScroll - _prevScroll;
             if (currScroll == 0 && !_isVisible) {
-                _headerBar.style.height = '70px';
+                _headerBar.style.height = '60px';
                 _isVisible = true;
                 _prevScroll = currScroll;
                 console.log("currScroll == 0 && !isVisible");
                 return;
             } else if (currScroll < _prevScroll && !_isVisible) {
-                _headerBar.style.height = '70px';
+                _headerBar.style.height = '60px';
                 _isVisible = true;
                 _prevScroll = currScroll;
                 console.log("currScroll < prevScroll && !isVisible");
