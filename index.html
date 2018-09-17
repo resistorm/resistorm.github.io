@@ -262,9 +262,47 @@
                 elements[0].classList.remove("active_navlink");
             }
 
+        };</script>
+
+    <script>
+        window.addEventListener("scroll", animateHeader);
+
+        var _prevScroll = 0;
+        var _isVisible = true;
+        var _headerBar = document.getElementById("page_header");
+
+        function animateHeader() {
+            if (!_headerBar) {
+                console.log("!headerbar");
+                _prevScroll = 0;
+                _isVisible = true;
+                _headerBar = document.getElementById("page_header");
+            }
+            var currScroll = window.pageYOffset;
+            var deltaScroll = currScroll - _prevScroll;
+            if (currScroll == 0 && !_isVisible) {
+                _headerBar.style.height = '70px';
+                _isVisible = true;
+                _prevScroll = currScroll;
+                console.log("currScroll == 0 && !isVisible");
+                return;
+            } else if (currScroll < _prevScroll && !_isVisible) {
+                _headerBar.style.height = '70px';
+                _isVisible = true;
+                _prevScroll = currScroll;
+                console.log("currScroll < prevScroll && !isVisible");
+                return;
+            } else if (currScroll > _prevScroll && _isVisible) {
+                _headerBar.style.height = '0';
+                _isVisible = false;
+                _prevScroll = currScroll;
+                console.log("currScroll > prevScroll && isVisible");
+                return;
+            } else {
+                console.log("None of the conditions are TRUE, prevScroll[" + _prevScroll + "]  will become currScroll [" + currScroll + "]");
+                _prevScroll = currScroll;
+            }
         }
-
-
 
     </script>
 
