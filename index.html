@@ -280,7 +280,7 @@
             }
             var currScroll = window.pageYOffset;
             var deltaScroll = currScroll - _prevScroll;
-            if (currScroll == 0 && !_isVisible) {
+            if (currScroll <= 60 && !_isVisible) {
                 _headerBar.style.height = '60px';
                 _isVisible = true;
                 _prevScroll = currScroll;
