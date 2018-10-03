@@ -259,9 +259,58 @@ li a:hover {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
-  padding: 5px;
 }
 .category_card h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.category_card p {
+  background-color: rgba(255, 255, 255, 0.6);
+  
+}
+
+#cat_cloud {
+  background-image: url("../res/cat_cloud.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#cat_computerscience {
+  background-image: url("../res/cat_computerscience.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#cat_ai {
+  background-image: url("../res/cat_ai.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#cat_analytics {
+  background-image: url("../res/cat_analytics.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#cat_trends {
+  background-image: url("../res/cat_trends.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#cat_tutorials {
+  background-image: url("../res/cat_tutorial.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
