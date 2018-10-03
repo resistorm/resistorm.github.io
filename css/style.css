@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+@import url("https://fonts.googleapis.com/css?family=Roboto:500");
+body {
+  background-color: black;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+}
+#canvas {
+  z-index: 10;
+}
+
+#main_page {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 67%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  padding: 0;
+  position: absolute;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 6vw;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+#resistorm {
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.25em;
+  text-indent: 0.25em;
+  border: 0.12em solid white;
+  text-shadow: 5px 5px 10px black;
+  box-shadow: 5px 5px 10px black;
+}
+#studios {
+  font-weight: 100;
+  color: white;
+  font-size: 6.9vw;
+  text-shadow: 5px 5px 10px black;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8vw;
+  padding: 2px;
+  margin: 0 4px;
+}
+
+#resistorm_head {
+  font-weight: 900;
+  color: black;
+  letter-spacing: 0.25em;
+  text-indent: 0.25em;
+  border: 0.12em solid black;
+  margin-bottom: auto;
+}
+#studios_head {
+  font-weight: 100;
+  color: black;
+  font-size: 2.2vw;
+  margin-top: 0.025vw;
+}
+
+#header {
+  position: absolute;
+  z-index: 3;
+  background-image: url("../res/clouds.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#head_logo {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
+a {
+  font-family: "Roboto";
+  text-decoration: none;
+  text-decoration-line: none;
+  font-weight: 500;
+  font-size: 2vw;
+  color: black;
+  padding: 2px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+a:hover {
+  color: teal;
+}
