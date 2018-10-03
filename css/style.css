@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
 @import url("https://fonts.googleapis.com/css?family=Roboto:500");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
 body {
   background-color: black;
   width: 100%;
+}
+#navbar a.current_page {
+  border-bottom: 3px solid black;
 }
 
 canvas {
@@ -19,7 +23,7 @@ canvas {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 67%;
+  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +91,7 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 33%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -113,8 +117,8 @@ a {
   font-family: "Roboto";
   text-decoration: none;
   text-decoration-line: none;
-  font-weight: 500;
-  font-size: 2vw;
+  font-weight: 300;
+  font-size: 1.8vw;
   color: black;
   padding: 2px;
   margin-top: 10px;

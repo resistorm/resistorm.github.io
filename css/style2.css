@@ -8,6 +8,9 @@
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+#header_navbar a.current_page {
+  border-bottom: 3px solid white;
+}
 img {
   max-width: 100%;
   margin: 10px auto;
@@ -88,6 +91,10 @@ body {
   margin-left: auto;
 }
 
+/*MAX WIDTH 1200*/
+/****************/
+/****************/
+/****************/
 @media only screen and (max-width: 1200px) {
   h1 {
     font-weight: 500;
@@ -159,8 +166,36 @@ body {
     margin: 0 auto;
   }
 }
+/*END max width 1200*/
 
+/*MIN WIDTH 1200*/
+/****************/
+/****************/
+/****************/
 @media only screen and (min-width: 1200px) {
+  h1 {
+    font-weight: 500;
+    font-size: 65px;
+    margin-bottom: 40px;
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  blockquote {
+    font-family: "Roboto";
+    font-size: 22px;
+    font-weight: 100;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 25px;
+  }
   #header_menu_toggle {
     display: none;
   }
@@ -168,19 +203,26 @@ body {
     position: fixed;
     width: 230px;
     float: left;
-    background-color: black;
-    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.384);
+    border-radius: 5px;
     margin-right: 10px;
   }
   #closebutton {
     display: none;
   }
   #page_center {
+    max-width: 900px;
     display: block;
-    width: 45%;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .text_container {
+    display: block;
+    width: 80%;
     margin: 0 auto;
   }
 }
+/*END min width 1200*/
 
 #side_menu_content {
   margin-left: 10px;
@@ -233,6 +275,9 @@ li a:hover {
 }
 
 /*Category Cards*/
+/*Category Cards*/
+/*Category Cards*/
+/*Category Cards*/
 #blog_intro h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -252,25 +297,33 @@ li a:hover {
 .category_card {
   font-family: "Roboto", sans-serif;
   display: block;
-  width: 28%;
-  min-height: 200px;
-  box-shadow: 3px 8px 15px black;
+  width: 250px;
+  height: 200px;
+}
+.card {
   margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 10px;
   margin-left: 10px;
+  display: block;
+  width: 250px;
+  height: 250px;
+
+  box-shadow: 3px 8px 15px black;
+  position: relative;
 }
-.category_card h2 {
+.category_card h2,
+.card h2 {
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 30px;
   margin-bottom: 20px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  background-color: white;
 }
-.category_card p {
+.category_card p,
+.card p {
   background-color: rgba(255, 255, 255, 0.6);
-  
 }
 
 #cat_cloud {
@@ -313,4 +366,23 @@ li a:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  text-align: center;
+  text-anchor: middle;
+}
+
+.card:hover .overlay {
+  bottom: 0;
+  height: 100%;
 }
