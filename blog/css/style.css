@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,900");
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100%;
+  position: relative;
+}
+/************************************************************************/
+/*START***TREEVIEWMENU***************************************************/
+/*********TREEVIEWMENU***************************************************/
+/*********TREEVIEWMENU***************************************************/
+/*********TREEVIEWMENU***************************************************/
+/*********TREEVIEWMENU***************************************************/
+/*********TREEVIEWMENU***************************************************/
+.tvmlist {
+  list-style-type: none;
+}
+.tvmcaret {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.tvmcaret::before {
+  content: "\027A7";
+  display: inline-block;
+  margin-right: 6px;
+}
+.tvmcaret-down::before {
+  transform: rotate(90deg);
+}
+.tvmnested {
+  display: none;
+}
+.tvmactive {
+  display: block;
+}
+/*END***TREEVIEWMENU*****************************************************/
+/************************************************************************/
+a {
+  text-decoration-line: none;
+  transition-duration: 0.2s;
+}
+a.black {
+  border-bottom: 1px solid white;
+}
+a.white {
+  border-bottom: 1px solid black;
+}
+a.black:hover {
+  border-bottom: 1px solid black;
+}
+a.white:hover {
+  border-bottom: 1px solid white;
+}
+a.current {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+img {
+  max-width: 100%;
+}
+tr {
+  height: 22px;
+  vertical-align: middle;
+}
+/***********FONT & TEXT************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: 900;
+  text-align: center;
+}
+h2 {
+  font-size: 38px;
+  font-weight: 500;
+  text-align: center;
+}
+h3 {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+h4 {
+  font-size: 18px;
+}
+@media only screen and (max-width: 600px) {
+  h3.header_logo,
+  a.sidenavbutton {
+    font-size: 22px;
+  }
+  .pagefooter {
+    font-size: 15px;
+  }
+  span.hFooter {
+    font-size: 18px;
+  }
+  .footeritem {
+    padding: 0;
+    margin: 10px 5px;
+  }
+}
+
+/***********PAGE HEADER************/
+/***********PAGE HEADER************/
+/***********PAGE HEADER************/
+/***********PAGE HEADER************/
+/***********PAGE HEADER************/
+.pageheader {
+  z-index: 9;
+}
+.logo_alpha.black {
+  padding-left: 0.5em;
+  letter-spacing: 0.5em;
+  font-weight: 700;
+  border: 0.1em solid black;
+  color: black;
+}
+.logo_omega.black {
+  text-indent: 0.1em;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  margin-left: 0.2em;
+  color: black;
+}
+
+.logo_alpha.white {
+  padding-left: 0.5em;
+  letter-spacing: 0.5em;
+  font-weight: 700;
+  border: 0.1em solid white;
+  color: white;
+}
+.logo_omega.white {
+  text-indent: 0.1em;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  margin-left: 0.2em;
+  color: white;
+}
+
+.navitem {
+  color: white;
+  border-bottom: 2px solid black;
+  transition-duration: 0.3s;
+  font-weight: 300;
+}
+.navitem:hover {
+  border-bottom: 2px solid white;
+}
+.navitem.current {
+  font-weight: 500;
+}
+
+#blog_header {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 85px;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  transition-duration: 0.5s;
+}
+.hidden {
+  height: 0;
+}
+
+.header_logo {
+  margin-top: 3px;
+  margin-right: 10vw;
+  display: block;
+}
+
+.sidenavbutton {
+  position: block;
+  float: left;
+  margin-right: auto;
+  margin-left: 2vw;
+  margin-top: 3px;
+
+  text-decoration-line: none;
+  color: white;
+  font-size: 30px;
+}
+
+/***********SIDE NAV************/
+/***********SIDE NAV************/
+/***********SIDE NAV************/
+/***********SIDE NAV************/
+/***********SIDE NAV************/
+.sidenav {
+  z-index: 10;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 80px;
+  width: 0;
+  transition-duration: 0.4s;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.sidenav.visible {
+  box-shadow: 5px 0 20px white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 30px;
+  }
+}
+.closebutton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 40px;
+  font-weight: 100;
+  color: white;
+  text-decoration-line: none;
+}
+.closebutton:hover {
+  font-weight: 900;
+}
+.navlist {
+  display: flex;
+  width: 90%;
+  height: 70%;
+  margin: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.sidenavitem {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  display: block;
+  margin-left: 20px;
+  font-size: 30px;
+  color: white;
+  text-decoration-line: none;
+  border-bottom: 1px solid black;
+  letter-spacing: 0em;
+  transition-duration: 0.2s;
+}
+.sidenavitem:hover {
+  border-bottom-color: white;
+  letter-spacing: 0.2em;
+}
+
+/***********PAGE MAIN************/
+/***********PAGE MAIN************/
+/***********PAGE MAIN************/
+/***********PAGE MAIN************/
+/***********PAGE MAIN************/
+/***********PAGE MAIN************/
+.pagemain {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.contentpage {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.columncontainer {
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.col {
+  padding: 10px 8px;
+  margin: 15px 10px;
+}
+
+@media only screen and (min-width: 1400px) {
+  .pagemain {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .pagemain {
+    top: 80px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .columncontainer {
+    flex-direction: column;
+  }
+  .col {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .columncontainer {
+    flex-direction: row;
+  }
+  .col {
+    width: 30%;
+  }
+}
+
+/***********PAGE FOOTER************/
+/***********PAGE FOOTER************/
+/***********PAGE FOOTER************/
+/***********PAGE FOOTER************/
+/***********PAGE FOOTER************/
+.pagefooter {
+  width: 100%;
+  min-width: 420px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: black;
+  color: white;
+  display: flex;
+  padding-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footeritem {
+  display: block;
+  padding: 8px 10px;
+  margin: 10px 12px;
+}
+
+.icon_image {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.hFooter {
+  padding-left: 0.4em;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+  font-size: 20px;
+}
+@media only screen and(max-width: 77300px) {
+  .pagefooter {
+    height: 370px;
+  }
+  #bottom_filler {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media only screen and(min-width: 773px) {
+  .pagefooter {
+    height: 296px;
+  }
+  #bottom_filler {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+/**SPOTLIGHT**/
+/**SPOTLIGHT**/
+/**SPOTLIGHT**/
+/**SPOTLIGHT**/
+
+@media only screen and(max-width: 900px) {
+  .spotlight_main {
+    flex-direction: column;
+  }
+
+  .spl_card {
+    width: 80%;
+    margin: 20px 20px;
+    height: 400px;
+    box-shadow: 3px 3px 15px black;
+  }
+}
+
+.spotlight {
+  width: 100%;
+}
+
+.spotlight_main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.spl_card {
+  cursor: pointer;
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  width: 30%;
+  min-width: 300px;
+  max-width: 480px;
+  padding: 0;
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 400px;
+  box-shadow: 3px 3px 15px black;
+}
+
+.spotlight_title h2 {
+  font-size: 4vw;
+  width: 90%;
+}
+
+.h2card {
+  text-align: start;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(37, 35, 35);
+  margin-left: 24px;
+}
+
+.spl_card_short {
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 8px;
+  font-size: 18px;
+}
